@@ -1,0 +1,38 @@
+<div class='full-list' *ngIf='pokemon'>
+    <div class='individual'  [ngStyle]="{
+        background:poke.type === 'fire'? 'red' : 
+        poke.type === 'water' ?'blue' : 
+        poke.type === 'electric' ? 'yellow':
+        poke.type === 'grass' ? 'lightgreen':
+        poke.type === 'poison' ? 'lavender':
+        poke.type === 'psychic' ? 'purple':
+        poke.type === 'bug' ? 'darkgreen':
+        poke.type === 'ground' ? '#D2691E':
+        poke.type === 'fighting' ? '#8B4513':
+        poke.type === 'steel' ? 'grey':
+        poke.type === 'ice' ? 'lightblue':
+        poke.type === 'flying' ? '#E8E8E8':
+        poke.type === 'fairy' ? 'pink':
+        poke.type === 'rock' ? '#A0522D':
+        poke.type === 'dragon' ? 'linear-gradient(red,orange,yellow,green,blue,indigo,violet)':
+        'white',
+        color:poke.type !== 'normal' && 
+        poke.type !== 'flying' &&
+        poke.type !== 'poison' &&
+        poke.type !== 'grass' &&
+        poke.type !== 'electric' &&
+        poke.type !== 'fairy' &&
+        poke.type !== 'ice' &&
+        poke.type !== 'dragon'
+        ? 'white':'black'
+    }" *ngFor='let poke of pokemon'>
+        <h1>{{poke.name}} </h1>
+        <!-- <h3>{{poke.type}}</h3> -->
+        <img [ngStyle]="{height:'90px',width:'100px'}" [src]='poke.image' alt="">
+        <button [ngStyle]="{
+            width:'100px',
+            height:'30px',
+            'fontSize':'12px'
+        }" (click)='handleCatch(poke)'>View</button>
+    </div>
+</div>
