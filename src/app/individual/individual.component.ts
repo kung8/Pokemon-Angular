@@ -17,7 +17,7 @@ export class IndividualComponent implements OnInit {
 
   ngOnInit() {
     let param = this.route.snapshot.paramMap.get("id")
-    console.log(param)
+    // console.log(param)
     this.http.get(`https://pokeapi.co/api/v2/pokemon/${param}`).subscribe(res=>{
       const {id,name,sprites,height,weight,moves,types} = res
       let caught = {
