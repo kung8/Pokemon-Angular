@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
 import { HeaderComponent } from './header/header.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { IndividualComponent } from './individual/individual.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
     HeaderComponent,
-    PokemonComponent
+    PokemonComponent,
+    IndividualComponent
   ],
   imports: [
     BrowserModule,

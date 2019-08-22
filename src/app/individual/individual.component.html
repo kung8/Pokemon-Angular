@@ -1,0 +1,9 @@
+<div>
+    <div [ngStyle]="{display:'flex','flexDirection':'column',alignItems:'center',marginTop:'50px'}">
+        <h1>{{newPokemon.name}}</h1>
+        <img [src]='newPokemon.image' alt="" [ngStyle]="{height:'300px',width:'300px'}">
+        <h3>A {{newPokemon.type}} type which stands at {{newPokemon.height/10}} meters and weighs approximately {{newPokemon.weight/10}} kg.</h3>
+        <h3>One of its favorite moves is {{newPokemon.moves}}.</h3>
+    </div>
+
+</div>
