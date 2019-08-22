@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   
   constructor(private router: Router,private route: ActivatedRoute,private location:Location) { 
   }
-  url = ''
+  url: String = ''
   
   ngOnInit() {
     this.url = this.location._platformLocation.location.pathname
