@@ -22,7 +22,7 @@ export class DisplayComponent implements OnInit {
         let poke = {
           id,
           name,
-          image: sprites.front_shiny,
+          image: sprites.front_default,
           type: types[0].type.name
         }
         this.pokemon = [...this.pokemon,poke].sort((a,b)=> a.id - b.id)

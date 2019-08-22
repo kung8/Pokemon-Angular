@@ -7,7 +7,7 @@
     fontSize:'45px'
 }">
     <h2 [ngStyle]="{outline:'none',color:'white',
-    textShadow:'1px 1px black'}" routerLink='/'>Pokedex</h2>
+    textShadow:'1px 1px black',textDecoration:url === '/' ? 'underline black':'none'}" routerLink='/'>Pokedex</h2>
     <h2 [ngStyle]="{outline:'none',color:'white',
-    textShadow:'1px 1px black'}" routerLink='/pokemon'>Random</h2>
+    textShadow:'1px 1px black',textDecoration:url === '/pokemon' ? 'underline black':'none'}" routerLink='/pokemon'>Random</h2>
 </header>

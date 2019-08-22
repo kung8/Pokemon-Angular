@@ -1,5 +1,8 @@
 <div class='full-list' *ngIf='pokemon'>
-    <div class='individual'  [ngStyle]="{
+    <div class='individual'  
+        routerLink='/pokemon/{{poke.id}}'
+        [ngStyle]="{
+        outline:'none',
         background:poke.type === 'fire'? 'red' : 
         poke.type === 'water' ?'blue' : 
         poke.type === 'electric' ? 'yellow':
@@ -28,13 +31,12 @@
     }" *ngFor='let poke of pokemon'>
         <h1>{{poke.name}} </h1>
         <!-- <h3>{{poke.type}}</h3> -->
-        <img [ngStyle]="{height:'90px',width:'100px'}" [src]='poke.image' alt="">
-        <button [ngStyle]="{
+        <img [ngStyle]="{height:'100px',width:'100px'}" [src]='poke.image' alt="">
+        <!-- <button [ngStyle]="{
             width:'100px',
             height:'30px',
             'fontSize':'12px'
         }" 
-        routerLink='/pokemon/{{poke.id}}'
-        >View</button>
+        >View</button> -->
     </div>
 </div>

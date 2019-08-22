@@ -19,12 +19,11 @@ export class PokemonComponent implements OnInit {
   getSpecificPokemon(){
     const random = Math.floor(Math.random() * 152)
     this.http.get(`https://pokeapi.co/api/v2/pokemon/${random}`).subscribe(res=>{
-      console.log(res)
       const {id,name,sprites,height,weight,moves,types} = res
       let caught = {
         id,
         name,
-        image:sprites.front_shiny,
+        image:sprites.front_default,
         height,
         weight,
         moves:moves[0].move.name,
@@ -32,7 +31,6 @@ export class PokemonComponent implements OnInit {
 
       }
       this.newPokemon = caught
-      console.log(caught)
     })
   }
 

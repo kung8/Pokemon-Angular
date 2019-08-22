@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck} from '@angular/core';
+import { Router,ActivatedRoute } from "@angular/router";
+import {Location} from '@angular/common'
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
-
+  
+  constructor(private router: Router,private route: ActivatedRoute,private location:Location) { 
+  }
+  url = ''
+  
   ngOnInit() {
+    this.url = this.location._platformLocation.location.pathname
+    console.log(this.url)
+  }
+
+  ngDoCheck(){
+    if(this.url != this.location._platformLocation.location.pathname){
+      this.url = this.location._platformLocation.location.pathname
+    }
   }
 
 }
+
+// export class HeaderComponent implements DoCheck {
+// }

@@ -23,7 +23,7 @@ export class IndividualComponent implements OnInit {
       let caught = {
         id,
         name,
-        image:sprites.front_shiny,
+        image:sprites.front_default,
         height,
         weight,
         moves:moves[0].move.name,
