@@ -1,9 +1,9 @@
 <div>
     <div [ngStyle]="{display:'flex','flexDirection':'column',alignItems:'center',marginTop:'50px'}">
-        <h1>{{newPokemon.name}}</h1>
-        <img [src]='newPokemon.image' alt="" [ngStyle]="{height:'300px',width:'300px'}">
-        <h3>A {{newPokemon.type}} type which stands at {{newPokemon.height/10}} meters and weighs approximately {{newPokemon.weight/10}} kg.</h3>
-        <h3>One of its favorite moves is {{newPokemon.moves}}.</h3>
+        <h1>{{newPokemon.name && newPokemon.name}}</h1>
+        <img [src]='newPokemon.image && newPokemon.image' alt="" [ngStyle]="{height:'300px',width:'300px'}">
+        <h3>A {{newPokemon.type && newPokemon.type}} type which stands at {{newPokemon.height && newPokemon.height/10}} meters and weighs approximately {{newPokemon.weight && newPokemon.weight/10}} kg.</h3>
+        <h3>One of its favorite moves is {{newPokemon.moves && newPokemon.moves}}.</h3>
     </div>
     <button routerLink='/' [ngStyle]="{margin:'35px calc(50% - 75px)',width:'150px',height:'45px',borderRadius:'16px',outline:'none',fontSize:'25px'}">Back to List</button>
 </div>

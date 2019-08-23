@@ -1,7 +1,5 @@
 <div class='full-list' *ngIf='pokemon'>
-    <div class='individual'  
-        routerLink='/pokemon/{{poke.id}}'
-        [ngStyle]="{
+    <div  class='individual' [ngStyle]="{
         outline:'none',
         background:poke.type === 'fire'? 'red' : 
         poke.type === 'water' ?'blue' : 
@@ -29,9 +27,9 @@
         poke.type !== 'dragon'
         ? 'white':'black'
     }" *ngFor='let poke of pokemon'>
-        <h1>{{poke.name}} </h1>
+        <h1>{{poke.name && poke.name}} </h1>
         <!-- <h3>{{poke.type}}</h3> -->
-        <img [ngStyle]="{height:'100px',width:'100px'}" [src]='poke.image' alt="">
+        <img (click)="catch(poke.id)" id={{poke.id}} class='tada' [ngStyle]="{height:'100px',width:'100px'}" [src]='poke.image && poke.image' alt="">
         <!-- <button [ngStyle]="{
             width:'100px',
             height:'30px',
@@ -39,4 +37,18 @@
         }" 
         >View</button> -->
     </div>
+    <div class='ball bounce' [ngStyle]="{
+        top:PosY,
+        left:PosX
+    }">
+        <div class='ball-center'>
+            <div class='center-center'></div>
+        </div>
+    </div>
 </div>
+
+<!-- <style>
+
+</style> -->
+
+<!-- routerLink='/pokemon/{{poke.id && poke.id}}' -->
