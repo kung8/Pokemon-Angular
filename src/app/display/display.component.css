@@ -24,7 +24,7 @@
     height: 30px;
 }
 
-/* @-webkit-keyframes shake {
+@-webkit-keyframes shake {
     from,
     to {
       -webkit-transform: translate3d(0, 0, 0);
@@ -77,7 +77,7 @@
   .shake:hover {
     -webkit-animation-name: shake;
     animation: shake 1s ease-in-out;
-  } */
+  }
 
   @-webkit-keyframes tada {
     from {
@@ -251,10 +251,184 @@
   .center-center {
       width:12px;
       height:12px;
-      background:white;
       border:solid black 1px;
       border-radius:50%;
       position:absolute;
       top:1.4px;
       left:1.20px;
+  }
+
+.uncaught-ball-top-top {
+  height:80px;
+  width:100px;
+  border-radius: 50%;
+  background:red;
+  position: absolute;
+  top:0px;
+  border:black solid 1px;
+}
+
+.uncaught-ball-top-bottom {
+  background:grey;
+  position: absolute;
+  border-radius:100%;
+  left:1.5px;
+  height:60px;
+  width:94px;
+  bottom:0px;
+  border: solid white 3px;
+  box-shadow: 0.5px 0.5px 1px 0.5px black;
+  z-index: 1;
+}
+
+.uncaught-ball-top-center-ring {
+  height:22px;
+  width:29px;
+  border-radius: 50%;
+  position: absolute;
+  top:-8px;
+  left:35px;
+  box-shadow: -1px -5px black;
+}
+
+.uncaught-ball-top-center {
+  height:22px;
+  width:27px;
+  background:white;
+  border-radius:50%;
+  position: absolute;
+  top:-11px;
+  left:35px;
+  z-index: 2;
+}
+
+.uncaught-ball-top-center-left {
+  background:white;
+  height:3px;
+  width:5px;
+  position:absolute;
+  /* border-radius:50%; */
+  left:32px;
+  top:-2px;
+}
+
+.uncaught-ball-top-center-center {
+  height:20px;
+  width:25px;
+  border-radius: 50%;
+  border:black solid 1px;
+  position:absolute;
+  /* top:2.5px; */
+  left:1px;
+  z-index: 3;
+}
+
+.uncaught-ball-top-center-center-center {
+  height:12px;
+  width:18px;
+  border-radius: 50%;
+  border:solid black 1px;
+  position: absolute;
+  top:2px;
+  left:2px;
+}
+
+.uncaught-ball-top-black-ring {
+  height:60px;
+  width:98px;
+  border-radius:50%;
+  position:absolute;
+  top:20px;
+  left:-2px;
+  box-shadow: 1px -5px black;
+}
+
+.uncaught-ball-top-black-ring-left {
+  height:20px;
+  width:20px;
+  background:black;
+  border-radius: 50%;
+  position: absolute;
+  top:28px;
+  left:2px;
+}
+
+.uncaught-ball-top-black-ring-left-2 {
+  height:20px;
+  width:20px;
+  background:black;
+  border-radius: 50%;
+  position: absolute;
+  top:33px;
+}
+
+.uncaught-ball-bottom-top {
+  background:grey;
+  position: absolute;
+  border-radius:50%;
+  left:1.5px;
+  height:60px;
+  width:94px;
+  top:0px;
+  border: solid white 3px;
+  box-shadow: 0.5px 0.5px 1px 0.5px black;
+}
+
+.uncaught-ball-bottom-bottom {
+  height:80px;
+  width:100px;
+  background:white;
+  border-radius: 50%;
+  position: absolute;
+  top:80px;
+  border:black solid 1px;
+}
+
+.uncaught-ball-bottom-center {
+  height:25px;
+  width:25px;
+  background:linear-gradient(to bottom, transparent 50%, black 50%);
+  border-radius:50%;
+  position: absolute;
+  top:44px;
+  left:35px;
+}
+
+
+  @keyframes ball-shake {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    10%,
+    20% {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+      transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+  
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+  
+    40%,
+    60%,
+    80% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .ball-shake {
+    -webkit-animation-name: ball-shake;
+    animation: tada 1s infinite;
   }
