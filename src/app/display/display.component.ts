@@ -15,7 +15,7 @@ export class DisplayComponent implements OnInit {
   PosY_u: string = 100 + 'px';
   PosX_u: string = 0 + 'px';
   ballExist: boolean = false;
-  // uncaught: boolean = false;
+  uncaught: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -40,27 +40,23 @@ export class DisplayComponent implements OnInit {
   }
 
   catch(id) {
-    // console.log('hit',window.scrollY)
-    // this.uncaught = false
-    // let sucArr = [true, false]
+    this.uncaught = false
+    let sucArr = [true, false]
     let random = Math.floor(Math.random() * 5000)
-    // let success = Math.floor(Math.random() * 2)
-    // let result = sucArr[success]
+    let success = Math.floor(Math.random() * 2)
+    let result = sucArr[success]
 
-    // if (result) {
+    if (result) {
       window.document.getElementById(id).style.display = 'none'
       this.ballExist = true
+      
       setTimeout(() => {
         window.document.getElementById('ball').classList.add('shake')
       }, 500)
-
       window.document.getElementById('ball').classList.add('ball-shake')
       window.document.getElementById('center-center').style.background = '#FA8072'
-
-      // window.document.getElementById('ball').classList.remove('bounce')
-
       let scroll = window.scrollY
-
+      
       setTimeout(() => {
         window.document.getElementById('center-center').style.background = 'white'
         window.document.getElementById('ball').classList.remove('ball-shake')
@@ -69,29 +65,37 @@ export class DisplayComponent implements OnInit {
 
       this.PosY = window.event.clientY - 50 + scroll + 'px'
       this.PosX = window.event.clientX - 50 + 'px'
-      // console.log(this.PosY)
-      // console.log(this.PosX)
-      // window.document.getElementById('pokemon').setAttribute('router'+'Link','/pokemon/{{poke.id}}')
-      // console.log(window.document.getElementById('pokemon'))
-      // let found = window.document.getElementsByClassName('bounce')
-      // console.log(found)
-      // 
-      // found[0]
-      // let route = window.document.getElementById('pokemon').getAttribute('[routerLink]')
-      // console.log(route)
-      // return RouterLink('/pokemon/{{poke.id && poke.id}}')
-      //Figure out how to get the point on where the card is to send the pokeball
-      //set a timeout so that the ball appears up that area
+      
       //re-route user to the individual pokemon
-  //   } else {
-  //     this.ballExist = false
-  //     this.uncaught = true
-  //     window.document.getElementById(id).style.display = 'none'
-  //     console.log(window.scrollY)
-  //     let scroll = window.scrollY
-  //     this.PosY_u = window.event.clientY + 'px'
-  //     this.PosX_u = window.event.clientX + 'px'
-  //     console.log(this.PosX_u,this.PosY_u)
-  //   }
+    } else {
+      window.document.getElementById(id).style.display = 'none'
+      let scroll = window.scrollY
+      this.ballExist = true
+      this.PosY = window.event.clientY - 50 + scroll + 'px'
+      this.PosX = window.event.clientX - 50 + 'px'
+      
+      setTimeout(() => {
+        window.document.getElementById('ball').classList.add('shake')
+      }, 500)
+
+      window.document.getElementById('ball').classList.add('ball-shake')
+      window.document.getElementById('center-center').style.background = '#FA8072'
+      
+      setTimeout(() => {
+        window.document.getElementById('center-center').style.background = 'white'
+        window.document.getElementById('ball').classList.remove('ball-shake')
+        window.document.getElementById('ball').classList.remove('shake')
+        this.ballExist = false;
+        this.uncaught = true;
+      }, random - 500)
+      
+      setTimeout(()=>{
+        this.uncaught = false
+        window.document.getElementById(id).style.removeProperty('display')
+      },random)
+
+      this.PosY_u = window.event.clientY - 80 + scroll + 'px'
+      this.PosX_u = window.event.clientX - 50 +  'px'
+    }
   }
 }

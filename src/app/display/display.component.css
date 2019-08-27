@@ -362,6 +362,17 @@
   top:33px;
 }
 
+.beam-uncaught {
+  background:#FA8072;
+  height:80px;
+  width:80px;
+  border-radius: 50%;
+  position:absolute;
+  top:40px;
+  left:10px;
+  z-index: 4;
+}
+
 .uncaught-ball-bottom-top {
   background:grey;
   position: absolute;
@@ -431,4 +442,8 @@
   .ball-shake {
     -webkit-animation-name: ball-shake;
     animation: tada 1s infinite;
+  }
+
+  .name {
+    outline:none;
   }
