@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-display',
@@ -42,7 +41,7 @@ export class DisplayComponent implements OnInit {
   catch(id) {
     this.uncaught = false
     let sucArr = [true, false]
-    let random = Math.floor(Math.random() * 5000)
+    let random = Math.ceil(Math.random() * 4000)
     let success = Math.floor(Math.random() * 2)
     let result = sucArr[success]
 
@@ -87,11 +86,12 @@ export class DisplayComponent implements OnInit {
         window.document.getElementById('ball').classList.remove('shake')
         this.ballExist = false;
         this.uncaught = true;
-      }, random - 500)
+      }, random - 300)
       
       setTimeout(()=>{
         this.uncaught = false
         window.document.getElementById(id).style.removeProperty('display')
+        window.document.getElementById(id).style.zIndex = '6'
       },random)
 
       this.PosY_u = window.event.clientY - 80 + scroll + 'px'
@@ -99,3 +99,5 @@ export class DisplayComponent implements OnInit {
     }
   }
 }
+
+
